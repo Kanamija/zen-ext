@@ -1,2 +1,4 @@
 # zen-ext
+
 zen-ext
+zen-ext is a Chrome extension designed to create a focused, distraction-free browsing experience. When the user clicks the extension icon in the Chrome toolbar, a small popup window opens displaying the extension’s HTML interface. This popup includes a button that triggers the popup.js script, which communicates with Chrome and injects the content.js script into the active tab. Once injected, the content script can modify the page, block distracting elements, or apply Zen Mode behavior to help the user stay focused

@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Zen Ext",
+  "version": "1.0",
+  "description": "Soft focus mode with a Haiku overlay.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
