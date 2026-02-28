@@ -8,3 +8,26 @@
 //   write the zen blurring logic overlay - Haiko box  dev and class name 
     // turning the zen mod on and off 
     // if we have time we can add music 
+
+    // Check if Zen Mode is already active
+const existing = document.getElementById("zen-overlay");
+
+if (existing) {
+  // If it exists, remove it (turn off Zen Mode)
+  existing.remove();
+  document.body.classList.remove("zen-mode");
+} else {
+  // Turn on Zen Mode
+  document.body.classList.add("zen-mode");
+
+  // Create the haiku box
+  const overlay = document.createElement("div");
+  overlay.id = "zen-overlay";
+
+  overlay.innerText = `Nothing moves but text.
+  Stillness holds what once was said.
+  Screen becomes silence.`;
+
+  // Add it to the page
+  document.body.appendChild(overlay);
+}

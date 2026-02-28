@@ -1,0 +1,34 @@
+/* Blur everything on the page EXCEPT the overlay */
+body.zen-mode > *:not(#zen-overlay) {
+  filter: blur(8px) brightness(0.5);
+  transition: filter 2.5s ease;
+}
+
+#zen-overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 420px;
+  max-width: 80%;
+
+  padding: 40px;
+
+  background-image: url("https://wallup.net/wp-content/uploads/2017/03/28/361576-leaves-water_drops-blurred-photography-nature-green-748x421.jpg");
+  background-size: cover;
+  background-position: center;
+  color: whitesmoke;
+
+  border-radius: 16px;
+
+  font-family: Georgia, serif;
+  font-size: 22px;
+  line-height: 1.6;
+  text-align: center;
+
+  backdrop-filter: blur(4px); /* soft glass effect */
+
+  z-index: 999999;
+  filter: none;
+}

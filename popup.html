@@ -1,10 +1,74 @@
-<!-- /  Description 
-// Zen-Ext is a Chrome extension designed to create a focused, distraction-free browsing experience. 
-// When the user clicks the extension icon in the Chrome toolbar, a small popup window opens displaying the extension’s HTML interface. 
-//  This popup includes a button that triggers the popup.js script, which communicates with Chrome and injects the content.js script into the active tab. 
-//  Once injected,the content script can modify the page, block distracting elements, or apply Zen Mode behavior to help the user stay focused 
- -->
-<!-- pseudo code 
-  1.button - event listener - takes to argument - callback (async funct to find the current tap we are on)
-  2.  
-   -->
+<!--
+This file defines the small UI that appears when the user clicks the extension icon.
+
+What happens in this file:
+
+1) Create the popup interface.
+   - Display the title "Zen Mode".
+   - Display a button labeled "Enter Stillness".
+
+2) Style the popup UI.
+   - Because this extension does not use a separate popup.css file,
+     the styling is written directly inside a <style> block here.
+   - These styles affect only the popup window, not the webpage.
+
+3) Load popup.js.
+   - The <script src="popup.js"> element loads JavaScript that gives
+     the button functionality.
+   - popup.js listens for the button click and then injects
+     content.js and content.css into the active browser tab.
+
+-->
+
+   <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Zen Mode</title>
+    <style>
+      body {
+        width: 220px;
+        font-family: "Georgia", serif;
+        padding: 12px;
+        background: #f5fbff;
+        text-align: center;
+      }
+
+      h3 {
+      margin-top: 0;
+      font-weight: normal;
+      }
+
+      button {
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        
+        background: #7ec8e3;     /* ocean blue */
+        color: white;
+
+        font-size: 15px;
+        font-family: "Georgia", serif;
+
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.1s ease;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>🍃 Zen Mode 🍃</h3>
+    <button id="activate">Enter Stillness</button>
+
+    <audio
+    id="zen-audio"
+    preload="auto"
+    loop
+    src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Sound_of_rain.ogg">
+    </audio>
+
+     <script src="popup.js"></script>
+
+  </body>
+</html>
