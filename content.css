@@ -1,7 +1,12 @@
+/* DEFAULT STATE: ensure everything is NOT blurred normally */
+body > * {
+  filter: none;
+  transition: filter 2.5s ease;
+}
+
 /* Blur everything on the page EXCEPT the overlay */
 body.zen-mode > *:not(#zen-overlay) {
   filter: blur(8px) brightness(0.5);
-  transition: filter 2.5s ease;
 }
 
 #zen-overlay {

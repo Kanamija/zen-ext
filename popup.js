@@ -37,6 +37,8 @@ button.addEventListener("click", async () => {
     currentWindow: true
   });
 
+  if (!tab?.id) return;
+
   //use another Chrome Extension API to inject CSS into current tab
   await chrome.scripting.insertCSS({
     //pass in an object with a target that specicies which tab to inject CSS file into
@@ -44,6 +46,7 @@ button.addEventListener("click", async () => {
     //and specific file name that has CSS that needs to be injected in an array (supports injecting multiple scripts)
     files: ["content.css"]
   });
+
 
   //Call another Chrome Extenstions API to inject JS into active browser tab
   //this method runs a JS file from our extention inside the webpage

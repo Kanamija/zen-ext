@@ -8,7 +8,7 @@
 //   write the zen blurring logic overlay - Haiko box  dev and class name 
     // turning the zen mod on and off 
     // if we have time we can add music 
-
+{
     // Check if Zen Mode is already active
 const existing = document.getElementById("zen-overlay");
 
@@ -30,4 +30,5 @@ if (existing) {
 
   // Add it to the page
   document.body.appendChild(overlay);
+}
 }
